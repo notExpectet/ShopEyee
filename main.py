@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+from dotenv import load_dotenv
 import os
 import json
 
@@ -15,6 +16,10 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Token from environment variable
 bot_token = os.environ.get('bot_token')
+
+print(f"TOKEN: {TOKEN}")
+if TOKEN is None:
+    print("Fehler: Kein Token gefunden!")
 
 # Slash command tree
 tree = bot.tree
